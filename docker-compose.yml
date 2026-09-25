@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  sih-monitor:
+    build: .
+    container_name: sih_monitor
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./sih_monitor.db:/app/sih_monitor.db
+      - ./logs:/app/logs
+      - ./config.yaml:/app/config.yaml

@@ -1,0 +1,43 @@
+sih:
+  url: "https://sih.gov.in/sih2026PS"
+  ps_id: "SIH26131"
+  ps_title: "Early detection and management of crop diseases and pest infestations"
+
+# Multi-PS support: You can monitor one or multiple problem statements simultaneously.
+problem_statements:
+  - id: "SIH26002"
+    title: "Al-Based Smart Logistics and Accessibility Intelligence Platform for North Eastern Region (NER)"
+    
+    enabled: true
+  - id: "SIH26131"
+    title: "Early detection and management of crop diseases and pest infestations"
+    enabled: true
+
+  - id: "SIH26005"
+    title: "Solar-Powered Smart Mini Cold Storage System for Fresh Vegetables in North Eastern Region (NER)"
+    enabled: false
+
+monitor:
+  interval_seconds: 300
+  request_timeout_seconds: 30
+  max_retries: 5
+  scraper_type: "html"  # Options: "html" (requests/BeautifulSoup), "browser" (Playwright fallback), "api"
+
+notification:
+  cooldown_seconds: 300
+  email:
+    enabled: true
+    smtp_host: "smtp.gmail.com"
+    smtp_port: 587
+    use_tls: true
+    sender: "maithilkorat2006@gmail.com"
+    recipient: "maithilkorat@gmail.com , rohanpatel042005@gmail.com,  jatinsadhnani2204@gmail.com, kshatriyayash19@gmail.com"
+    app_password: "mubt sxti optb uawm"
+
+  whatsapp:
+    enabled: false
+    provider: "twilio"
+    account_sid: "${TWILIO_ACCOUNT_SID}"
+    auth_token: "${TWILIO_AUTH_TOKEN}"
+    from_number: "${TWILIO_FROM_NUMBER}"
+    to_number: "${TWILIO_TO_NUMBER}"
